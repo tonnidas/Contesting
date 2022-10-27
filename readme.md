@@ -1,4 +1,4 @@
-# Assignment 7-8 (dev)
+# Contesting
 
 - Run Junit Tests (Disable logs to clearly print the reports)
 
