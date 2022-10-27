@@ -1,0 +1,758 @@
+{
+	"info": {
+		"_postman_id": "cacfb144-9633-4c60-9bab-2b7d5bfaefe0",
+		"name": "Jui_TonniAssignment7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23512021"
+	},
+	"item": [
+		{
+			"name": "Populate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/populate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"populate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all persons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all teams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teams",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all contests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/contests",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get teams by contest name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teamsByContest?contestName=ICPC Regional",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teamsByContest"
+					],
+					"query": [
+						{
+							"key": "contestName",
+							"value": "ICPC Regional"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group persons by age",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/personsGroupByAge",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personsGroupByAge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest occupancy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/contestsOccupancy",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsOccupancy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set contest editable (ICPC Final)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/setEditable?contestId=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"setEditable"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set contest editable (Mini Contest)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/setEditable?contestId=27",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"setEditable"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "27"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team7\",\n    \"members\": [\n        {\n            \"id\": 4\n        },\n        {\n            \"id\": 5\n        },\n        {\n            \"id\": 6\n        }\n    ],\n    \"coach\": {\n        \"id\": 17\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestsRegistration?contestId=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsRegistration"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest registration (new persons)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team8\",\n    \"members\": [\n        {\n            \"birthdate\": \"1999-02-01\",\n            \"email\": \"student30@example.com\",\n            \"name\": \"student30\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-02\",\n            \"email\": \"student31@example.com\",\n            \"name\": \"student31\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-03\",\n            \"email\": \"student32@example.com\",\n            \"name\": \"student32\",\n            \"university\": \"university2\"\n        }\n    ],\n    \"coach\": {\n        \"birthdate\": \"1995-02-02\",\n        \"email\": \"coach33@example.com\",\n        \"name\": \"coach33\",\n        \"university\": \"university2\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestsRegistration?contestId=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsRegistration"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest registration (new and old persons)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team23\",\n    \"members\": [\n        {\n            \"birthdate\": \"1999-02-01\",\n            \"email\": \"student40@example.com\",\n            \"name\": \"student40\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-01\",\n            \"email\": \"student41@example.com\",\n            \"name\": \"student41\",\n            \"university\": \"university2\"\n        },\n        {\n            \"id\": 7\n        }\n    ],\n    \"coach\": {\n        \"birthdate\": \"1995-02-02\",\n        \"email\": \"coach43@example.com\",\n        \"name\": \"coach43\",\n        \"university\": \"university2\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestsRegistration?contestId=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsRegistration"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest registration (member already in contest)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team9\",\n    \"members\": [\n        {\n            \"id\": 4\n        },\n        {\n            \"id\": 5\n        },\n        {\n            \"id\": 6\n        }\n    ],\n    \"coach\": {\n        \"id\": 17\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestsRegistration?contestId=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsRegistration"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest registration (members/coach not distinct)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team10\",\n    \"members\": [\n        {\n            \"id\": 7\n        },\n        {\n            \"id\": 8\n        },\n        {\n            \"id\": 8\n        }\n    ],\n    \"coach\": {\n        \"id\": 17\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestsRegistration?contestId=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsRegistration"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest registration (members older than 24 years)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team11\",\n    \"members\": [\n        {\n            \"birthdate\": \"1990-02-01\",\n            \"email\": \"student30@example.com\",\n            \"name\": \"student30\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-02\",\n            \"email\": \"student31@example.com\",\n            \"name\": \"student31\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-03\",\n            \"email\": \"student32@example.com\",\n            \"name\": \"student32\",\n            \"university\": \"university2\"\n        }\n    ],\n    \"coach\": {\n        \"birthdate\": \"1995-02-02\",\n        \"email\": \"coach33@example.com\",\n        \"name\": \"coach33\",\n        \"university\": \"university2\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestsRegistration?contestId=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsRegistration"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest registration (no capacity)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team12\",\n    \"members\": [\n        {\n            \"birthdate\": \"1999-02-01\",\n            \"email\": \"student30@example.com\",\n            \"name\": \"student30\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-02\",\n            \"email\": \"student31@example.com\",\n            \"name\": \"student31\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-03\",\n            \"email\": \"pstudent32@example.com\",\n            \"name\": \"per32\",\n            \"university\": \"university2\"\n        }\n    ],\n    \"coach\": {\n        \"birthdate\": \"1995-02-02\",\n        \"email\": \"coach33@example.com\",\n        \"name\": \"coach33\",\n        \"university\": \"university2\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestsRegistration?contestId=27",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsRegistration"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "27"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contest registration (not editable)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team12\",\n    \"members\": [\n        {\n            \"birthdate\": \"1999-02-01\",\n            \"email\": \"student30@example.com\",\n            \"name\": \"student30\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-02\",\n            \"email\": \"student31@example.com\",\n            \"name\": \"student31\",\n            \"university\": \"university2\"\n        },\n        {\n            \"birthdate\": \"1999-02-03\",\n            \"email\": \"student32@example.com\",\n            \"name\": \"student32\",\n            \"university\": \"university2\"\n        }\n    ],\n    \"coach\": {\n        \"birthdate\": \"1995-02-02\",\n        \"email\": \"coach33@example.com\",\n        \"name\": \"coach33\",\n        \"university\": \"university2\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestsRegistration?contestId=24",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestsRegistration"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set contest editable (ICPC Regional)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/setEditable?contestId=24",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"setEditable"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit team",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 20,\n    \"rank\": 5,\n    \"state\": \"CANCELLED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editTeam",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editTeam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit contest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 24,\n    \"capacity\": 200,\n    \"date\": \"2022-01-10\",\n    \"name\": \"ICPC Regional Renamed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editContest",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editContest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set contest read only (ICPC Regional)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/setReadOnly?contestId=24",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"setReadOnly"
+					],
+					"query": [
+						{
+							"key": "contestId",
+							"value": "24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit team (not writable)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 20,\n    \"rank\": 5,\n    \"state\": \"PENDING\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editTeam",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editTeam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit contest (not writable)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 24,\n    \"capacity\": 100,\n    \"date\": \"2022-01-10\",\n    \"name\": \"ICPC Regional Rename\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editContest",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editContest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Promote team",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/promote?superContestId=25&teamId=23",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promote"
+					],
+					"query": [
+						{
+							"key": "superContestId",
+							"value": "25"
+						},
+						{
+							"key": "teamId",
+							"value": "23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Promote team (rank not within 5)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/promote?superContestId=19&teamId=22",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promote"
+					],
+					"query": [
+						{
+							"key": "superContestId",
+							"value": "19"
+						},
+						{
+							"key": "teamId",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Promote team (no capacity)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/promote?superContestId=27&teamId=20",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promote"
+					],
+					"query": [
+						{
+							"key": "superContestId",
+							"value": "27"
+						},
+						{
+							"key": "teamId",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Promote team (not editable)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/promote?superContestId=24&teamId=23",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promote"
+					],
+					"query": [
+						{
+							"key": "superContestId",
+							"value": "24"
+						},
+						{
+							"key": "teamId",
+							"value": "23"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
